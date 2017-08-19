@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/mishaled/gIndexImplementation/issues"
   },
-  "homepage": "https://github.com/mishaled/gIndexImplementation#readme"
+  "homepage": "https://github.com/mishaled/gIndexImplementation#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^3.2.1",
+    "mocha": "^3.5.0",
+    "sinon": "^3.2.1",
+    "typescript": "^2.4.2"
+  }
 }
