@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp test",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -17,10 +18,20 @@
   },
   "homepage": "https://github.com/mishaled/gIndexImplementation#readme",
   "devDependencies": {
+    "@types/chai": "^4.0.3",
+    "@types/gulp": "^4.0.4",
+    "@types/lodash": "^4.14.73",
+    "@types/mocha": "^2.2.41",
+    "chai": "^4.1.1",
     "gulp": "^3.9.1",
+    "gulp-mocha": "^4.3.1",
     "gulp-typescript": "^3.2.1",
+    "gulp-watch": "^4.3.11",
     "mocha": "^3.5.0",
     "sinon": "^3.2.1",
     "typescript": "^2.4.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
   }
 }

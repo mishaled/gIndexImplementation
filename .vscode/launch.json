@@ -1,0 +1,34 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Mocha Tests",
+            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+            "sourceMaps": true,
+            "args": [
+                "--colors",
+                //"--no-timeouts",
+                "**/*.spec.js"
+            ],
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {
+                "NODE_ENV": "testing"
+            },
+            "stopOnEntry": false,
+            "outFiles": []//,
+            //"preLaunchTask": "typescript"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${file}",
+            "outFiles": [
+                "${workspaceRoot}/out/**/*.js"
+            ]
+        }
+    ]
+}
