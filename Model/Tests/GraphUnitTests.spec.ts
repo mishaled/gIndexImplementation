@@ -4,10 +4,14 @@ import { expect } from 'chai';
 import { Vertice, Edge, Graph } from '../';
 
 describe('Graph', () => {
+    let emptyValuesArr: Vertice[][] = [undefined, null, []];
+
     describe('IsEmpty', () => {
+        let emptyValuesArr: any = [undefined, null, []];
+
         (() => {
-            [undefined, null, []].forEach((firstVal) => {
-                [undefined, null, []].forEach((secondVal) => {
+            emptyValuesArr.forEach((firstVal: any) => {
+                emptyValuesArr.forEach((secondVal: any) => {
                     it('Vertices is ' + secondVal + ' and edged are ' + firstVal + '- should return true',
                         () => {
                             let graph: Graph = new Graph();
@@ -54,6 +58,5 @@ describe('Graph', () => {
 
                 expect(returnVal).to.be.false;
             });
-
     });
 });

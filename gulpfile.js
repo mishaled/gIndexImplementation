@@ -16,14 +16,14 @@ gulp.task('typescript', () => {
         .pipe(ts({
             noImplicitAny: true
         }))
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('.'));
 });
 
 gulp.task('test', ['typescript'], () => {
     return gulp
-        .src(['**/*.js', '!node_modules/**/*.js'])
-        .pipe(gmocha({ reporter: 'nyan' }))
+        .src(['**/*.spec.js', '!node_modules/**/*.js'], { read: true })
+        .pipe(gmocha({ reporter: 'spec' }))
 });
 
 gulp.task('watch', ['test'], () => {

@@ -9,7 +9,7 @@
             "sourceMaps": true,
             "args": [
                 "--colors",
-                //"--no-timeouts",
+                "--no-timeouts",
                 "**/*.spec.js"
             ],
             "cwd": "${workspaceRoot}",
@@ -18,8 +18,8 @@
                 "NODE_ENV": "testing"
             },
             "stopOnEntry": false,
-            "outFiles": []//,
-            //"preLaunchTask": "typescript"
+            "outFiles": [],
+            "preLaunchTask": "typescript"
         },
         {
             "type": "node",
