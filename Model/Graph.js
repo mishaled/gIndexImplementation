@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var lodash = require("lodash");
 var Graph = (function () {
     function Graph(partialObject) {
@@ -16,5 +16,6 @@ var Graph = (function () {
     };
     return Graph;
 }());
-exports.default = Graph;
+exports["default"] = Graph;
+
 //# sourceMappingURL=Graph.js.map

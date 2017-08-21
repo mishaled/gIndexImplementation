@@ -14,20 +14,20 @@ export class CanonicalFormGenerator {
         this.edges = this.generateEdgesWithVerticesWithSubscripts(this.vertices, graph.E);
     }
 
-    public GetCanonicalForm(): EdgeWithVerticesWithSubscripts[] {
-        let edgeArrays: EdgeWithVerticesWithSubscripts[][] = this.getAllCanonicalForms(this.vertices);
-        let minimalLabel = this.findMinimalCanonicalForm(edgeArrays);
+    public GetCanonicalForm(): string[][] {
+        let edgeCanonicalForms: string[][][] = this.getAllCanonicalForms(this.vertices);
+        let minimalLabel = this.findMinimalCanonicalForm(edgeCanonicalForms);
         return minimalLabel;
     }
 
-    private getAllCanonicalForms(vertices: VerticeWithSubscript[]): EdgeWithVerticesWithSubscripts[][] {
+    private getAllCanonicalForms(vertices: VerticeWithSubscript[]): string[][][] {
         return lodash.map(vertices, (vertice) => {
             return this.getCanonicalFormStatringWithVertice(vertice);
         });
     }
 
-    private getCanonicalFormStatringWithVertice(startingVertice: VerticeWithSubscript): EdgeWithVerticesWithSubscripts[] {
-        let finalEdges: EdgeWithVerticesWithSubscripts[] = [];
+    private getCanonicalFormStatringWithVertice(startingVertice: VerticeWithSubscript): string[][] {
+        let finalEdges: string[][] = [];
 
         let clonedVertices = lodash.clone(this.vertices);
         let clonedEdges = lodash.clone(this.edges);
@@ -47,13 +47,17 @@ export class CanonicalFormGenerator {
 
             if (lodash.isEmpty(notVisitedConnectedEdges)) {
                 let backwardEdges = this.generateBackwardEdged(connectedEdges, notVisitedConnectedEdges);
-                finalEdges.concat.apply([], backwardEdges);
+                let backwardEdgesCanonicalForms = this.transformEdgesToCanonicalForms(backwardEdges, currentWithSubscript, true);
+                finalEdges.push.apply(finalEdges, backwardEdgesCanonicalForms);
+                lodash.forEach(backwardEdges, (edge) => { edge.visited = true; });
 
                 currentWithSubscript = this.decrementVertice(currentWithSubscript, clonedVertices);
                 continue;
             }
 
             let minimalEdge = this.findMinimalEdgeByLabel(notVisitedConnectedEdges);
+            minimalEdge.visited = true;
+            finalEdges.push(minimalEdge.ToCanonicalForm(false, currentWithSubscript));
 
             let nextVertice = this.findVerticeWithSubscriptOnTheOtherSideOfTheEdge(minimalEdge, currentWithSubscript);
             nextVertice.Subscript = currentWithSubscript.Subscript + 1;
@@ -68,7 +72,8 @@ export class CanonicalFormGenerator {
     }
 
     private findMinimalEdgeByLabel(edges: EdgeWithVerticesWithSubscripts[]) {
-        return lodash.minBy(edges, (edge) => { return edge.label })
+        let notVisitedEdges = lodash.filter(edges, (edge) => { return !edge.visited });
+        return lodash.minBy(notVisitedEdges, (edge) => { return edge.label })
     }
 
     private findVerticeWithSubscriptOnTheOtherSideOfTheEdge(edge: EdgeWithVerticesWithSubscripts, firstVertice: VerticeWithSubscript) {
@@ -84,10 +89,9 @@ export class CanonicalFormGenerator {
         return secondVertice;
     }
 
-    private findMinimalCanonicalForm(edgeArrays: EdgeWithVerticesWithSubscripts[][]): EdgeWithVerticesWithSubscripts[] {
-        let minimalLabel = lodash.minBy(edgeArrays, (edgeArr) => {
-            let labels: string[][] = lodash.map(edgeArr, (edge) => { return edge.ToCanonicalForm(); });
-            return this.concatenateStrings(labels);
+    private findMinimalCanonicalForm(edgeCanonicalForms: string[][][]): string[][] {
+        let minimalLabel = lodash.minBy(edgeCanonicalForms, (canonicalForm) => {
+            return this.concatenateStrings(canonicalForm);
         });
 
         return minimalLabel;
@@ -113,9 +117,20 @@ export class CanonicalFormGenerator {
         });
     }
 
-    private generateBackwardEdged(connectedEdges: EdgeWithVerticesWithSubscripts[], notVisitedConnectedEdges: EdgeWithVerticesWithSubscripts[]) {
+    private generateBackwardEdged(connectedEdges: EdgeWithVerticesWithSubscripts[], notVisitedConnectedEdges: EdgeWithVerticesWithSubscripts[]): EdgeWithVerticesWithSubscripts[] {
         let edges = lodash.without(connectedEdges, Object.apply(notVisitedConnectedEdges));
-        return lodash.orderBy(edges, (edge) => { return edge.label });
+        let notVisitedEdges = lodash.filter(edges, (edge) => { return !edge.visited; });
+        let orderedEdges = lodash.orderBy(notVisitedEdges, (edge) => { return edge.label });
+
+        return orderedEdges;
+    }
+
+    private transformEdgesToCanonicalForms(edges: EdgeWithVerticesWithSubscripts[], sourceVertice: VerticeWithSubscript, isBackward: boolean): string[][] {
+        let canonicalForms: string[][] = lodash.map(edges, (edge: EdgeWithVerticesWithSubscripts) => {
+            return edge.ToCanonicalForm(true, sourceVertice);
+        });
+
+        return canonicalForms;
     }
 
     private filterEdgesToNotVisitedVertices(clonedVertices: VerticeWithSubscript[], currentWithSubscript: VerticeWithSubscript, connectedEdges: EdgeWithVerticesWithSubscripts[]) {

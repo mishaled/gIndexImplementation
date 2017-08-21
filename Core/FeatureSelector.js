@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var FeatureSelector = (function () {
     function FeatureSelector() {
     }
@@ -9,4 +9,5 @@ var FeatureSelector = (function () {
     return FeatureSelector;
 }());
 exports.FeatureSelector = FeatureSelector;
+
 //# sourceMappingURL=FeatureSelector.js.map

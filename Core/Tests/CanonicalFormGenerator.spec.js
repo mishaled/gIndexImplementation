@@ -1,14 +1,14 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 require("mocha");
 var lodash = require("lodash");
 var chai_1 = require("chai");
 var Model_1 = require("../../Model");
 var _1 = require("../");
-describe.only('CanonicalFormGenerator', function () {
+describe('CanonicalFormGenerator', function () {
     var emptyValuesArr = [undefined, null, []];
     describe('GenerateCanonicalForm', function () {
-        it.only('Not empty graph - should generate correct label for graph', function () {
+        it('Not empty graph - should generate correct label for graph', function () {
             var graph = generateGraph();
             var canonicalFormGenerator = new _1.CanonicalFormGenerator(graph);
             var canonicalForm = canonicalFormGenerator.GetCanonicalForm();
@@ -21,7 +21,7 @@ describe.only('CanonicalFormGenerator', function () {
                 var canonicalFormGenerator = new _1.CanonicalFormGenerator(graph);
                 var canonicalForm = canonicalFormGenerator.GetCanonicalForm();
             };
-            chai_1.expect(badFunc).to.throw('There are no edges in the graph');
+            chai_1.expect(badFunc).to["throw"]('There are no edges in the graph');
         }); });
         function generateGraph() {
             var graph = new Model_1.Graph();
@@ -73,4 +73,5 @@ describe.only('CanonicalFormGenerator', function () {
         }
     });
 });
+
 //# sourceMappingURL=CanonicalFormGenerator.spec.js.map

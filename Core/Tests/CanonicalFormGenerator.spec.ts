@@ -4,11 +4,11 @@ import { expect } from 'chai';
 import { Vertice, Edge, Graph } from '../../Model';
 import { CanonicalFormGenerator } from '../'
 
-describe.only('CanonicalFormGenerator', () => {
+describe('CanonicalFormGenerator', () => {
     let emptyValuesArr: Vertice[][] = [undefined, null, []];
 
     describe('GenerateCanonicalForm', () => {
-        it.only('Not empty graph - should generate correct label for graph', () => {
+        it('Not empty graph - should generate correct label for graph', () => {
             let graph = generateGraph();
 
             let canonicalFormGenerator = new CanonicalFormGenerator(graph);

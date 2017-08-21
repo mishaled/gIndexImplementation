@@ -9,14 +9,49 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var _1 = require("./");
+var lodash = require("lodash");
 var EdgeWithVerticesWithSubscripts = (function (_super) {
     __extends(EdgeWithVerticesWithSubscripts, _super);
-    function EdgeWithVerticesWithSubscripts() {
-        return _super !== null && _super.apply(this, arguments) || this;
+    function EdgeWithVerticesWithSubscripts(partialObject) {
+        var _this = _super.call(this, partialObject) || this;
+        _this.visited = false;
+        return _this;
     }
+    EdgeWithVerticesWithSubscripts.prototype.ToCanonicalForm = function (isBackward, sourceVertice) {
+        if (lodash.isEmpty(this.firstVertice)) {
+            throw 'First vertice is empty';
+        }
+        if (lodash.isEmpty(this.secondVertice)) {
+            throw 'second vertice is empty';
+        }
+        var firstVertice;
+        var secondVertice;
+        if (!isBackward) {
+            if (sourceVertice == this.firstVertice) {
+                firstVertice = this.firstVertice;
+                secondVertice = this.secondVertice;
+            }
+            else {
+                secondVertice = this.firstVertice;
+                firstVertice = this.secondVertice;
+            }
+        }
+        else {
+            if (sourceVertice == this.firstVertice) {
+                secondVertice = this.firstVertice;
+                firstVertice = this.secondVertice;
+            }
+            else {
+                firstVertice = this.firstVertice;
+                secondVertice = this.secondVertice;
+            }
+        }
+        return [firstVertice.Id, secondVertice.Id, firstVertice.label, this.label, secondVertice.label];
+    };
     return EdgeWithVerticesWithSubscripts;
 }(_1.Edge));
-exports.default = EdgeWithVerticesWithSubscripts;
+exports["default"] = EdgeWithVerticesWithSubscripts;
+
 //# sourceMappingURL=EdgeWithVerticesWithSubscripts.js.map

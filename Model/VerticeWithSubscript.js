@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var _1 = require("./");
 var VerticeWithSuscript = (function (_super) {
     __extends(VerticeWithSuscript, _super);
@@ -20,5 +20,6 @@ var VerticeWithSuscript = (function (_super) {
     }
     return VerticeWithSuscript;
 }(_1.Vertice));
-exports.default = VerticeWithSuscript;
+exports["default"] = VerticeWithSuscript;
+
 //# sourceMappingURL=VerticeWithSubscript.js.map

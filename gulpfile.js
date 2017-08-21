@@ -23,7 +23,7 @@ gulp.task('typescript', () => {
 gulp.task('test', ['typescript'], () => {
     return gulp
         .src(['**/*.spec.js', '!node_modules/**/*.js'], { read: true })
-        .pipe(gmocha({ reporter: 'spec' }))
+        .pipe(gmocha({ reporter: 'nyan' }))
 });
 
 gulp.task('watch', ['test'], () => {

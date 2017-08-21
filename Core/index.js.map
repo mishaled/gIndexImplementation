@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["index.ts"],"names":[],"mappings":";;AAAA,mEAAkE;AAAzD,0DAAA,sBAAsB,CAAA"}
+{"version":3,"sources":["Core/index.ts"],"names":[],"mappings":";;AAAA,mEAAkE;AAAzD,0DAAA,sBAAsB,CAAA","file":"Core/index.js","sourcesContent":["export { CanonicalFormGenerator } from './CanonicalFormGenerator';"],"sourceRoot":"/source/"}
