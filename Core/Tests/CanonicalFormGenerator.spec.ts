@@ -79,7 +79,7 @@ describe('CanonicalFormGenerator', () => {
             graph.E.push(new Edge({
                 id: lodash.uniqueId(),
                 label: 'b',
-                firstVertice: verticeX1,
+                firstVertice: verticeX0,
                 secondVertice: verticeZ
             }));
 

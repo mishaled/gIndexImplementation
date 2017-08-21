@@ -57,10 +57,12 @@ export class CanonicalFormGenerator {
 
             let minimalEdge = this.findMinimalEdgeByLabel(notVisitedConnectedEdges);
             minimalEdge.visited = true;
-            finalEdges.push(minimalEdge.ToCanonicalForm(false, currentWithSubscript));
+            finalEdges.push(minimalEdge.ToCanonicalForm(currentWithSubscript));
 
             let nextVertice = this.findVerticeWithSubscriptOnTheOtherSideOfTheEdge(minimalEdge, currentWithSubscript);
-            nextVertice.Subscript = currentWithSubscript.Subscript + 1;
+            if (nextVertice.Subscript < 0) {
+                nextVertice.Subscript = currentWithSubscript.Subscript + 1;                
+            }
             currentWithSubscript = nextVertice;
         } while (this.notVisitedVerticesExist(clonedVertices));
 
@@ -127,7 +129,7 @@ export class CanonicalFormGenerator {
 
     private transformEdgesToCanonicalForms(edges: EdgeWithVerticesWithSubscripts[], sourceVertice: VerticeWithSubscript, isBackward: boolean): string[][] {
         let canonicalForms: string[][] = lodash.map(edges, (edge: EdgeWithVerticesWithSubscripts) => {
-            return edge.ToCanonicalForm(true, sourceVertice);
+            return edge.ToCanonicalForm(sourceVertice);
         });
 
         return canonicalForms;

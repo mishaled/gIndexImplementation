@@ -66,7 +66,7 @@ describe('CanonicalFormGenerator', function () {
             graph.E.push(new Model_1.Edge({
                 id: lodash.uniqueId(),
                 label: 'b',
-                firstVertice: verticeX1,
+                firstVertice: verticeX0,
                 secondVertice: verticeZ
             }));
             return graph;

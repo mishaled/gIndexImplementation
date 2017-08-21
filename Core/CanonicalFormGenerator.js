@@ -44,9 +44,11 @@ var CanonicalFormGenerator = (function () {
             }
             var minimalEdge = this.findMinimalEdgeByLabel(notVisitedConnectedEdges);
             minimalEdge.visited = true;
-            finalEdges.push(minimalEdge.ToCanonicalForm(false, currentWithSubscript));
+            finalEdges.push(minimalEdge.ToCanonicalForm(currentWithSubscript));
             var nextVertice = this.findVerticeWithSubscriptOnTheOtherSideOfTheEdge(minimalEdge, currentWithSubscript);
-            nextVertice.Subscript = currentWithSubscript.Subscript + 1;
+            if (nextVertice.Subscript < 0) {
+                nextVertice.Subscript = currentWithSubscript.Subscript + 1;
+            }
             currentWithSubscript = nextVertice;
         } while (this.notVisitedVerticesExist(clonedVertices));
         return finalEdges;
@@ -100,7 +102,7 @@ var CanonicalFormGenerator = (function () {
     };
     CanonicalFormGenerator.prototype.transformEdgesToCanonicalForms = function (edges, sourceVertice, isBackward) {
         var canonicalForms = lodash.map(edges, function (edge) {
-            return edge.ToCanonicalForm(true, sourceVertice);
+            return edge.ToCanonicalForm(sourceVertice);
         });
         return canonicalForms;
     };

@@ -19,7 +19,7 @@ var EdgeWithVerticesWithSubscripts = (function (_super) {
         _this.visited = false;
         return _this;
     }
-    EdgeWithVerticesWithSubscripts.prototype.ToCanonicalForm = function (isBackward, sourceVertice) {
+    EdgeWithVerticesWithSubscripts.prototype.ToCanonicalForm = function (sourceVertice) {
         if (lodash.isEmpty(this.firstVertice)) {
             throw 'First vertice is empty';
         }
@@ -28,25 +28,13 @@ var EdgeWithVerticesWithSubscripts = (function (_super) {
         }
         var firstVertice;
         var secondVertice;
-        if (!isBackward) {
-            if (sourceVertice == this.firstVertice) {
-                firstVertice = this.firstVertice;
-                secondVertice = this.secondVertice;
-            }
-            else {
-                secondVertice = this.firstVertice;
-                firstVertice = this.secondVertice;
-            }
+        if (sourceVertice == this.firstVertice) {
+            firstVertice = this.firstVertice;
+            secondVertice = this.secondVertice;
         }
         else {
-            if (sourceVertice == this.firstVertice) {
-                secondVertice = this.firstVertice;
-                firstVertice = this.secondVertice;
-            }
-            else {
-                firstVertice = this.firstVertice;
-                secondVertice = this.secondVertice;
-            }
+            secondVertice = this.firstVertice;
+            firstVertice = this.secondVertice;
         }
         return [firstVertice.Id, secondVertice.Id, firstVertice.label, this.label, secondVertice.label];
     };
