@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var Model_1 = require("../Model");
 var lodash = require("lodash");
 var CanonicalFormGenerator = (function () {
@@ -125,5 +125,4 @@ var CanonicalFormGenerator = (function () {
     return CanonicalFormGenerator;
 }());
 exports.CanonicalFormGenerator = CanonicalFormGenerator;
-
 //# sourceMappingURL=CanonicalFormGenerator.js.map

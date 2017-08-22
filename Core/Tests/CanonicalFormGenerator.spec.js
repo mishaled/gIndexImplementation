@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 require("mocha");
 var lodash = require("lodash");
 var chai_1 = require("chai");
@@ -21,7 +21,7 @@ describe('CanonicalFormGenerator', function () {
                 var canonicalFormGenerator = new _1.CanonicalFormGenerator(graph);
                 var canonicalForm = canonicalFormGenerator.GetCanonicalForm();
             };
-            chai_1.expect(badFunc).to["throw"]('There are no edges in the graph');
+            chai_1.expect(badFunc).to.throw('There are no edges in the graph');
         }); });
         function generateGraph() {
             var graph = new Model_1.Graph();
@@ -73,5 +73,4 @@ describe('CanonicalFormGenerator', function () {
         }
     });
 });
-
 //# sourceMappingURL=CanonicalFormGenerator.spec.js.map

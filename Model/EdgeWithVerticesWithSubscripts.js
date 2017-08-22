@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var _1 = require("./");
 var lodash = require("lodash");
 var EdgeWithVerticesWithSubscripts = (function (_super) {
@@ -40,6 +40,5 @@ var EdgeWithVerticesWithSubscripts = (function (_super) {
     };
     return EdgeWithVerticesWithSubscripts;
 }(_1.Edge));
-exports["default"] = EdgeWithVerticesWithSubscripts;
-
+exports.default = EdgeWithVerticesWithSubscripts;
 //# sourceMappingURL=EdgeWithVerticesWithSubscripts.js.map

@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 require("mocha");
 var chai_1 = require("chai");
 var _1 = require("../");
@@ -15,14 +15,14 @@ describe('EdgeWithVerticesWithSubscripts', function () {
                         edge.firstVertice = firstVal;
                         edge.secondVertice = secondVal;
                         var badFunc = function () { var canonicalForm = edge.ToCanonicalForm(edge.firstVertice); };
-                        chai_1.expect(badFunc).to["throw"]('First vertice is empty');
+                        chai_1.expect(badFunc).to.throw('First vertice is empty');
                     });
                     it('From second vertice, first vertice is ' + firstVal + ' and the second is ' + secondVal + ' - should throw error appropriately', function () {
                         var edge = new _1.EdgeWithVerticesWithSubscripts();
                         edge.firstVertice = firstVal;
                         edge.secondVertice = secondVal;
                         var badFunc = function () { var canonicalForm = edge.ToCanonicalForm(edge.secondVertice); };
-                        chai_1.expect(badFunc).to["throw"]('First vertice is empty');
+                        chai_1.expect(badFunc).to.throw('First vertice is empty');
                     });
                 });
             });
@@ -31,13 +31,13 @@ describe('EdgeWithVerticesWithSubscripts', function () {
                     var edge = new _1.EdgeWithVerticesWithSubscripts();
                     edge.secondVertice = new _1.VerticeWithSubscript();
                     var badFunc = function () { var canonicalForm = edge.ToCanonicalForm(edge.firstVertice); };
-                    chai_1.expect(badFunc).to["throw"]('First vertice is empty');
+                    chai_1.expect(badFunc).to.throw('First vertice is empty');
                 });
                 it('From second vertice, first vertice is ' + val + ' - should throw error appropriately', function () {
                     var edge = new _1.EdgeWithVerticesWithSubscripts();
                     edge.secondVertice = new _1.VerticeWithSubscript();
                     var badFunc = function () { var canonicalForm = edge.ToCanonicalForm(edge.secondVertice); };
-                    chai_1.expect(badFunc).to["throw"]('First vertice is empty');
+                    chai_1.expect(badFunc).to.throw('First vertice is empty');
                 });
             });
             emptyValuesArr.forEach(function (val) {
@@ -45,13 +45,13 @@ describe('EdgeWithVerticesWithSubscripts', function () {
                     var edge = new _1.EdgeWithVerticesWithSubscripts();
                     edge.firstVertice = new _1.VerticeWithSubscript();
                     var badFunc = function () { var canonicalForm = edge.ToCanonicalForm(edge.firstVertice); };
-                    chai_1.expect(badFunc).to["throw"]('second vertice is empty');
+                    chai_1.expect(badFunc).to.throw('second vertice is empty');
                 });
                 it('From second vertice, Second vertice is ' + val + ' - should throw error appropriately', function () {
                     var edge = new _1.EdgeWithVerticesWithSubscripts();
                     edge.firstVertice = new _1.VerticeWithSubscript();
                     var badFunc = function () { var canonicalForm = edge.ToCanonicalForm(edge.secondVertice); };
-                    chai_1.expect(badFunc).to["throw"]('second vertice is empty');
+                    chai_1.expect(badFunc).to.throw('second vertice is empty');
                 });
             });
         });
@@ -73,5 +73,4 @@ describe('EdgeWithVerticesWithSubscripts', function () {
         });
     });
 });
-
 //# sourceMappingURL=EdgeWithVerticesWithSubscriptsUnitTests.spec.js.map

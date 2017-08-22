@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 require("mocha");
 var chai_1 = require("chai");
 var _1 = require("../");
@@ -15,7 +15,7 @@ describe('Graph', function () {
                         graph.V = secondVal;
                         graph.E = firstVal;
                         var returnVal = graph.IsEmpty();
-                        chai_1.expect(returnVal).to.be["true"];
+                        chai_1.expect(returnVal).to.be.true;
                     });
                 });
                 it('Vertices is ' + firstVal + ' and edged not empty - should return false', function () {
@@ -23,14 +23,14 @@ describe('Graph', function () {
                     graph.V = firstVal;
                     graph.E.push(new _1.Edge());
                     var returnVal = graph.IsEmpty();
-                    chai_1.expect(returnVal).to.be["false"];
+                    chai_1.expect(returnVal).to.be.false;
                 });
                 it('Vertices are not empty and edged are: ' + firstVal + ' - should return false', function () {
                     var graph = new _1.Graph();
                     graph.V.push(new _1.Vertice());
                     graph.E = firstVal;
                     var returnVal = graph.IsEmpty();
-                    chai_1.expect(returnVal).to.be["false"];
+                    chai_1.expect(returnVal).to.be.false;
                 });
             });
         })();
@@ -39,9 +39,8 @@ describe('Graph', function () {
             graph.V.push(new _1.Vertice());
             graph.E.push(new _1.Edge());
             var returnVal = graph.IsEmpty();
-            chai_1.expect(returnVal).to.be["false"];
+            chai_1.expect(returnVal).to.be.false;
         });
     });
 });
-
 //# sourceMappingURL=GraphUnitTests.spec.js.map
