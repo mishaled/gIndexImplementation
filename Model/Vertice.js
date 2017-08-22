@@ -7,4 +7,5 @@ var Vertice = (function () {
     return Vertice;
 }());
 exports.default = Vertice;
+
 //# sourceMappingURL=Vertice.js.map

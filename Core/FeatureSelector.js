@@ -9,4 +9,5 @@ var FeatureSelector = (function () {
     return FeatureSelector;
 }());
 exports.FeatureSelector = FeatureSelector;
+
 //# sourceMappingURL=FeatureSelector.js.map

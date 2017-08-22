@@ -7,4 +7,5 @@ var Edge = (function () {
     return Edge;
 }());
 exports.default = Edge;
+
 //# sourceMappingURL=Edge.js.map

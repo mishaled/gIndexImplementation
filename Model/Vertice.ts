@@ -2,7 +2,7 @@ export default class Vertice {
     Id: string;
     label: string;
 
-    constructor(partialObject?: Vertice) {
+    constructor(partialObject?: Object) {
         (<any>Object).assign(this, partialObject);
     }
 }

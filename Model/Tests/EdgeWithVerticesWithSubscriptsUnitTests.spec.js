@@ -73,4 +73,5 @@ describe('EdgeWithVerticesWithSubscripts', function () {
         });
     });
 });
+
 //# sourceMappingURL=EdgeWithVerticesWithSubscriptsUnitTests.spec.js.map

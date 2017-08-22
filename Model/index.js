@@ -13,4 +13,5 @@ exports.EdgeWithVerticesWithSubscripts = EdgeWithVerticesWithSubscripts_1.defaul
 var GraphDatabase_1 = require("./GraphDatabase");
 exports.GraphDatabase = GraphDatabase_1.default;
 //export { BaseObject } from './BaseObject';
+
 //# sourceMappingURL=index.js.map

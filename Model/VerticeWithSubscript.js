@@ -21,4 +21,5 @@ var VerticeWithSuscript = (function (_super) {
     return VerticeWithSuscript;
 }(_1.Vertice));
 exports.default = VerticeWithSuscript;
+
 //# sourceMappingURL=VerticeWithSubscript.js.map

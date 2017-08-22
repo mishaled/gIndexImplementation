@@ -1,8 +1,11 @@
 import { Vertice, Edge, VerticeWithSubscript, EdgeWithVerticesWithSubscripts } from './';
 import * as lodash from 'lodash';
+import { Type } from 'serializer.ts/Decorators';
 
 export default class Graph {
+    @Type(() => Vertice)
     V: Vertice[];
+    @Type(() => Edge)
     E: Edge[];
 
     constructor(partialObject?: Graph) {

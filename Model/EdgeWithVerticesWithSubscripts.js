@@ -41,4 +41,5 @@ var EdgeWithVerticesWithSubscripts = (function (_super) {
     return EdgeWithVerticesWithSubscripts;
 }(_1.Edge));
 exports.default = EdgeWithVerticesWithSubscripts;
+
 //# sourceMappingURL=EdgeWithVerticesWithSubscripts.js.map

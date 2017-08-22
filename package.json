@@ -1,7 +1,7 @@
 {
   "name": "g-index-implementation",
   "version": "1.0.0",
-  "description": "",
+  "description": "an implementation of the gIndex data structure and algorithm",
   "main": "index.js",
   "scripts": {
     "test": "gulp test",
@@ -32,6 +32,8 @@
     "typescript": "^2.4.2"
   },
   "dependencies": {
-    "lodash": "^4.17.4"
+    "array-trie": "^1.0.0",
+    "lodash": "^4.17.4",
+    "serializer.ts": "0.0.12"
   }
 }

@@ -7,4 +7,5 @@ var GraphDatabase = (function () {
     return GraphDatabase;
 }());
 exports.default = GraphDatabase;
+
 //# sourceMappingURL=GraphDatabase.js.map

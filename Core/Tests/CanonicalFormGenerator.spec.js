@@ -73,4 +73,5 @@ describe('CanonicalFormGenerator', function () {
         }
     });
 });
+
 //# sourceMappingURL=CanonicalFormGenerator.spec.js.map

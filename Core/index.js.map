@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["index.ts"],"names":[],"mappings":";;AAAA,mEAAkE;AAAzD,0DAAA,sBAAsB,CAAA"}
+{"version":3,"sources":["Core/index.ts"],"names":[],"mappings":";;AAAA,mEAAkE;AAAzD,0DAAA,sBAAsB,CAAA;AAC/B,yCAAwC;AAA/B,gCAAA,SAAS,CAAA","file":"Core/index.js","sourcesContent":["export { CanonicalFormGenerator } from './CanonicalFormGenerator';\r\nexport { GraphTrie } from './GraphTrie';\r\n"],"sourceRoot":"/source/"}

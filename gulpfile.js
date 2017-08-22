@@ -13,9 +13,7 @@ gulp.task('typescript', () => {
     return gulp
         .src(['**/*.ts', '!node_modules/**/*.ts'])
         .pipe(sourcemaps.init())
-        .pipe(ts({
-            noImplicitAny: true
-        }))
+        .pipe(tsProject())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('.'));
 });

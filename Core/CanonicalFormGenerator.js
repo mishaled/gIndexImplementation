@@ -125,4 +125,5 @@ var CanonicalFormGenerator = (function () {
     return CanonicalFormGenerator;
 }());
 exports.CanonicalFormGenerator = CanonicalFormGenerator;
+
 //# sourceMappingURL=CanonicalFormGenerator.js.map

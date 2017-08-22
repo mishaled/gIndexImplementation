@@ -1,4 +1,3 @@
-"use strict";
 // import * as lodash from 'lodash';
 // export abstract class BaseObject<T> {
 //     // constructor(partialObject?: T) {
@@ -37,4 +36,5 @@
 // //         return (<any>Object).assign(this, objects);
 // //     };
 // // } 
+
 //# sourceMappingURL=BaseObject.js.map
