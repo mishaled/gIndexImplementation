@@ -19,6 +19,13 @@ var Graph = (function () {
             this.E = [];
         }
     }
+    Object.defineProperty(Graph.prototype, "Size", {
+        get: function () {
+            return this.E.length;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Graph.prototype.IsEmpty = function () {
         return lodash.isEmpty(this.V) && lodash.isEmpty(this.E);
     };

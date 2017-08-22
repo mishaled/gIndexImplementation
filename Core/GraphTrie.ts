@@ -11,7 +11,7 @@ export class GraphTrie {
 
     public Add(graph: Graph, canonicalLabel: Array<String>) {
 
-        if (this.trie.get(canonicalLabel)) {
+        if (this.Get(canonicalLabel)) {
             throw Error('Canonical label already exists in trie');
         }
         this.trie.set(canonicalLabel, graph);

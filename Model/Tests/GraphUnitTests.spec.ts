@@ -59,4 +59,23 @@ describe('Graph', () => {
                 expect(returnVal).to.be.false;
             });
     });
+
+    describe('Size', () => {
+        it('no edges and no vertices - shoudl return 0', () => {
+            let graph = new Graph();
+            expect(graph.Size).to.be.equal(0);
+        });
+
+        it('one edge and no vertices - shoudl return 0', () => {
+            let graph = new Graph();
+            graph.E.push(new Edge());
+            expect(graph.Size).to.be.equal(1);
+        });
+
+        it('no edges and one vertice - shoudl return 0', () => {
+            let graph = new Graph();
+            graph.V.push(new Vertice());
+            expect(graph.Size).to.be.equal(0);
+        });
+    });
 });

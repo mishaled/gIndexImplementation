@@ -8,6 +8,10 @@ export default class Graph {
     @Type(() => Edge)
     E: Edge[];
 
+    public get Size(): number {
+        return this.E.length;
+    }
+
     constructor(partialObject?: Graph) {
         (<any>Object).assign(this, partialObject);
 

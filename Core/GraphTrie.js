@@ -6,7 +6,7 @@ var GraphTrie = (function () {
         this.trie = new Trie();
     }
     GraphTrie.prototype.Add = function (graph, canonicalLabel) {
-        if (this.trie.get(canonicalLabel)) {
+        if (this.Get(canonicalLabel)) {
             throw Error('Canonical label already exists in trie');
         }
         this.trie.set(canonicalLabel, graph);
